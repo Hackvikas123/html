@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>User Details</title>
+</head>
+<body background="https://media.istockphoto.com/id/1220393560/photo/scientist-doctor-team-work-internet-of-thing-future-technology-dna-genome-virus-infect.jpg?s=612x612&w=0&k=20&c=Y4j2Xeo6a1x1fTJQRl1SKzY4FEu624WgpO9Fnj2awm4=">
+    <div class="container">
+        <div class="title"><h2>User Details</h2></div>
+        <div id="details"></div>
+        <button onclick="logout()">Logout</button>
+    </div>
+    <script>
+        window.onload = function() {
+            const userDetails = JSON.parse(localStorage.getItem('userDetails'));
+
+            if (!userDetails) {
+                alert("Please log in first.");
+                window.location.href = "login.html";
+            } else {
+                document.getElementById("details").innerHTML = `
+                    <p>Name: ${userDetails.Name}</p>
+                    <p>Father Name: ${userDetails.FatherName}</p>
+                    <p>Mother Name: ${userDetails.MotherName}</p>
+                    <p>Contact Number: ${userDetails.ContactNumber}</p>
+                    <p>Aadhaar Number: ${userDetails.Adharnumber}</p>
+                    <p>Studying: ${userDetails.studying}</p>
+                    <p>Date of Birth: ${userDetails.Dob}</p>
+                `;
+            }
+        };
+
+        function logout() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

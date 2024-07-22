@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+<body background="https://media.istockphoto.com/id/1460731638/photo/maple-leaf-on-an-open-book-on-a-wooden-table.jpg?s=1024x1024&w=is&k=20&c=10MLYi-MHuAgkF5-XhRjJc56G8mZzX6_dbzNgCMj0vs=">
+    <div class="container">
+        <div class="title"><h2>Login</h2></div>
+        <form onsubmit="login(); return false;">
+            <div class="input-box">
+                <span class="details">Date Of Birth</span>
+                <input type="date" id="loginDob" placeholder="Enter your Dob" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Password</span>
+                <input type="password" id="loginPassword" placeholder="Enter Password" required>
+            </div>
+            <div class="button">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+    </div>
+    <script>
+        function login() {
+            const loginDob = document.getElementById("loginDob").value;
+            const loginPassword = document.getElementById("loginPassword").value;
+
+            const userDetails = JSON.parse(localStorage.getItem('userDetails'));
+
+            if (userDetails && userDetails.Dob === loginDob && userDetails.password === loginPassword) {
+                window.location.href = "details.html";
+            } else {
+                alert("Invalid Dob or password");
+            }
+        }
+    </script>
+</body>
+</html>

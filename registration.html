@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>NEET Registration</title>
+</head>
+<body background= "https://media.istockphoto.com/id/532394887/photo/medical-students-walking-through-corridor.jpg?s=1024x1024&w=is&k=20&c=XQpF05p60UGMBKUpEKlTGhOvQrPnuFYl6FebwGUU3Fw=">
+    <div class="container">
+        <div class="title"><h2>NEET REGISTRATION FORM</h2></div>
+        <form onsubmit="takevalue(); return false;">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Name</span>
+                    <input type="text" id="Name" placeholder="Enter your name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Father Name</span>
+                    <input type="text" id="FatherName" placeholder="Father name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Mother Name</span>
+                    <input type="text" id="MotherName" placeholder="Enter mother name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Contact Number</span>
+                    <input type="text" id="ContactNumber" placeholder="Enter number" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Adhaar Number</span>
+                    <input type="text" id="Adharnumber" placeholder="Adhaar Number" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Studying</span>
+                    <input type="text" id="studying" placeholder="Enter class you are studying" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Date of Birth</span>
+                    <input type="date" id="Dob" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="password" id="password" placeholder="Enter Password" required>
+                </div>
+            </div>
+            
+            <div class="button">
+                <input type="submit" value="Submit">
+                <p>Already have an account? <a href="login.html">Login here</a></p> 
+            </div>
+        </form>
+    </div>
+    <script>
+        function takevalue() {
+            var Name = document.getElementById("Name").value;
+            var FatherName = document.getElementById("FatherName").value;
+            var MotherName = document.getElementById("MotherName").value;
+            var ContactNumber = document.getElementById("ContactNumber").value;
+            var Adharnumber = document.getElementById("Adharnumber").value;
+            var studying = document.getElementById("studying").value;
+            var Dob = document.getElementById("Dob").value;
+            var password = document.getElementById("password").value;
+
+            const userDetails = { Name, FatherName, MotherName, ContactNumber, Adharnumber, studying, Dob, password };
+            localStorage.setItem('userDetails', JSON.stringify(userDetails));
+
+            alert("Registration successful!");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>
