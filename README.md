@@ -1,5 +1,5 @@
 First page i have made four buttons attached with their respective links.
-when you click on any button it opens their respective registration form.
+When you click on any button it opens their respective registration form.
 after filling all details hen you click on submit button it opens the login page.
 where you can login with entered details which validates with the entered details such as date of birt and password.
 after login it shows the details page where all yours data will be displayed which you have entered during registration.
